@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>AngularJS Tutorials</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="fifaApp" ng-controller="FifaCtrl as fifa">
+<div class="container">
+    <div class="page-header">
+        <h1>Gr 1</h1>
+    </div>
+    <div>
+        <div class="panel-body text-center">
+            <button class="btn btn-danger">Hello!</button>
+            <button class="btn btn-default" ng-click="fifa.showPolandRank($event)">Where is Poland?</button>
+            <button class="btn btn-info">Nice to meet you!</button>
+            <code ng-if="fifa.PolandRank">{{fifa.type}}</code>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <h1 >Some big text</h1>
+        <p>...</p>
+        <p><a href="#" role="button">Learn more</a></p>
+    </div>
+
+</div>
+<script src="bower_components/angular/angular.js"></script>
+<script src="exercise3.js"></script>
+</body>
+</html>
