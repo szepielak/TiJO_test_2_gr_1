@@ -2,7 +2,7 @@
 {
       'use strict';
       var module = angular.module ('exerciseApp', ['ngResource', 'ngRoute']);
-      var i;
+      //var
       module.config (function ($provide, $routeProvider)
       {
             $provide.decorator ('$httpBackend', angular.mock.e2e.$httpBackendDecorator);
@@ -23,7 +23,7 @@
                   redirectTo: '/'
             });
       });
-      ;
+     // ;
 
       module.run (function ($httpBackend)
       {
@@ -32,7 +32,7 @@
             [
                   {
                         id: sequence++,
-                        name: "Krowka",
+                        name: 'Krowka',
                         factory: 'Wawel'
                   },
                   {
@@ -42,7 +42,7 @@
                   },
                   {
                         id: sequence++,
-                        name: "Michalki",
+                        name: 'Michalki',
                         factory: 'Wawel'
                   }
             ].every (function (value)
@@ -51,10 +51,7 @@
                   return true;
             });
 
-            function a()
-            {
 
-            };
 
             $httpBackend.whenGET (/\/api\/candy\/(\d+)/).respond (function (method, url)
             {
@@ -66,7 +63,7 @@
                   }
                   return [404];
             });
-            $httpBackend.whenGET ("/api/candy").respond (function ()
+            $httpBackend.whenGET (/\/api\/candy\/(\d+)/).respond (function ()
             {
                   return [200, candies];
             });
@@ -95,7 +92,7 @@
                         return [200];
                   }
                   return [404];
-            })
+            }
 
             $httpBackend.whenGET (/.*\.html/).passThrough ();
 
